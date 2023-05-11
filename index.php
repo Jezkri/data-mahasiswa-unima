@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-session_start();
-if(!$_SESSION['nama']){
-  header('Location:../');
-}?>
-<?php include('header.php');?>
-<?php include('../conf/config.php');?>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UNIMA</title>
 
-  <!-- Preloader -->
-  
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="app/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="app/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="app/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="app/index2.html" class="h1"><b>Login</b></a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Masukkan username dan password</p>
 
-  <!-- Navbar -->
-  <?php include('navbar.php');?>
-  <!-- /.navbar -->
+      <form action="conf/autentikasi.php" method="post">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="username" name="username">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="password" name='password'>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-     <!-- Brand Logo -->
-  <?php include ('logo.php');?>
 
-    <!-- Sidebar -->
-    <?php include('sidebar.php');?>
-    <!-- /.sidebar -->
-  </aside>
- 
-    <!-- Content Header (Page header) -->
-    <div class="content-wrapper">
-  <!-- Content Wrapper. Contains page content -->
- <?php include ('content_header.php');?>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <?php
-    if (isset($_GET['page'])){
-    if ($_GET['page']=='dashboard'){
-       include('dashboard.php');
-    }
-    else if ($_GET['page'] =='data-mahasiswa'){
-      include('datamahasiswa.php');
-    }
-
-    else if ($_GET['page'] =='edit-data'){
-      include('edit/editdata.php');
-  }
-    else {
-      include('notfound.php');
-  }
-}
-else {
-      include('dashboard.php');
-  }?>
-
-  
-    <!-- /.content -->
+      
+    </div>
+    <!-- /.card-body -->
   </div>
-  <!-- /.content-wrapper -->
- <?php include('footer.php')?>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+  <!-- /.card -->
 </div>
-<!-- ./wrapper -->
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="app/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="app/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="app/dist/js/adminlte.min.js"></script>
 </body>
 </html>
